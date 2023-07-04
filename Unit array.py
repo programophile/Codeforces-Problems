@@ -1,18 +1,30 @@
-for i in range(int(input())):
-    new_arr=[0,0]
+import math
+for _ in range(int(input())):
     n=int(input())
     arr=[int(i) for i in input().split()]
+    sum=0
+    mul=1
+    operation=0
     for i in arr:
-        if i==-1:
-            new_arr[0]+=1
+        sum+=i
+        mul*=i
+    if sum<0:
+        operation = math.ceil(abs(sum)/2)
+        if operation%2==0:
+            if mul<0:
+                operation+=1
+
         else:
-            new_arr[1]+=1
-    while sum(ne)
-    # if new_arr[0]%2==0 and new_arr[1]>new_arr[0]:
-    #     print(0)
-    # if len(arr)%2==0:
-    #     if new_arr[0]!=new_arr[1]:
-    #         a=abs(new_arr[0]-new_arr[1])-1
-    # else:
-    #     a = abs(new_arr[0] - new_arr[1])
-    # print(a)
+            if mul>0:
+                operation+=1
+    elif sum>=0:
+        if mul>0:
+            operation=0
+        else:
+            operation=1
+    print(operation)
+    # if mul>0 and sum>-1:
+    #     print()
+
+    # sum_arr=sum(arr)
+    # mul_arr= [-1,-1,-1,1,1]
